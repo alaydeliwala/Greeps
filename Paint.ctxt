@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Paint()
+comment0.text=\n\ Create\ some\ paint,\ of\ default\ color.\n
+comment1.params=color
+comment1.target=Paint(java.lang.String)
+comment1.text=\n\ Create\ some\ paint,\ of\ specific\ fixed\ colors.\ Legal\ color\ values\ are\:\n\ "red",\ "orange",\ and\ "purple".\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ With\ passing\ time,\ the\ color\ fades,\ and\ will\ eventually\ disappear.\n
+comment3.params=
+comment3.target=java.lang.String\ getColor()
+comment3.text=\n\ Return\ the\ color\ name\ of\ this\ paint\ drop.\n
+comment4.params=
+comment4.target=void\ updateImage()
+comment4.text=\n\ Make\ the\ image\n
+numComments=5

@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ScoreBoard()
+comment1.params=title\ text\ prefix\ map\ scores
+comment1.target=ScoreBoard(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int[])
+comment1.text=\n\ Create\ a\ score\ board\ for\ an\ interim\ result.\n
+comment2.params=title\ text\ prefix\ scores
+comment2.target=ScoreBoard(java.lang.String,\ java.lang.String,\ java.lang.String,\ int[])
+comment2.text=\n\ Create\ a\ score\ board\ for\ the\ final\ result.\n
+comment3.params=title\ text\ prefix\ score
+comment3.target=void\ makeImage(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
+comment3.text=\n\ Make\ the\ score\ board\ image.\n
+comment4.params=mapNo\ scores
+comment4.target=void\ addMapScores(int,\ int[])
+comment4.text=\n\ Add\ the\ scores\ for\ the\ individual\ maps\ to\ the\ score\ board.\ 'scores'\ is\ an\n\ array\ with\ all\ scores,\ 'mapNo'\ is\ the\ number\ of\ the\ current\ map\ (array\ entries\n\ past\ this\ value\ have\ no\ valid\ value).\n
+comment5.params=name\ scores
+comment5.target=void\ printResultToTerminal(java.lang.String,\ int[])
+numComments=6
