@@ -1,8 +1,11 @@
 # Greeps
-A Code for the Greenfoot Greeps Competition
-This Code is required to be run in the Greenfoot Application 
-This code has 3 practice maps that you can practice on
+A Code for the Greenfoot Greeps Competition.
+This Code is required to be run in the Greenfoot Application. 
+This code has 3 practice maps that you can practice on.
+
 THE RULES ARE:
+
+
 Rule 1: Only change the class 'Greep'. No other classes may be modified or created.
 
 Rule 2: No additional fields. You cannot extend the Greeps' memory. That is: You are not allowed to add fields to the class (except final fields). You can use the one byte memory that is provided.
