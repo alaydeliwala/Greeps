@@ -1,21 +1,18 @@
-public class Greep extends Creature
-{
+public class Greep extends Creature {
     // Remember: you cannot extend the Greep's memory. So:
     // no additional fields (other than final fields) allowed in this
 
     /**
      * Default constructor for testing purposes.
      */
-    public Greep()
-    {
+    public Greep() {
         this(null);
     }
 
     /**
      * Create a Greep with its home space ship.
      */
-    public Greep(Ship ship)
-    {
+    public Greep(Ship ship) {
         super(ship);
     }
 
@@ -23,39 +20,30 @@ public class Greep extends Creature
      * Do what a greep's gotta do.
      */
 
-         public void act()
-    {
-        super.act(); 
+    public void act() {
+        super.act();
 
-        if (carryingTomato())
-        {
-            if(atShip())
-            {
+        if (carryingTomato()) {
+            if (atShip()) {
                 dropTomato();
                 turn(180);
                 setMemory(getRotation() / 20);
-            }
-            else
-            {
+            } else {
                 turnHome();
                 move();
                 checkWater();
                 checkEdge();
-                        }
-       }
-        else
-       {
-            if (getFlag(1))
+            }
+        } else // if not carrying tomato
+        {
+            if (getFlag(1)) // flag is used denote whether we are on tomatoes
             {
                 turnToTomatoes();
                 checkFood();
                 worldEdge();
                 move();
 
-            }
-
-            else
-            {
+            } else {
                 worldEdge();
                 move();
                 checkFood();
@@ -64,35 +52,31 @@ public class Greep extends Creature
         }
 
     }
-    public void checkWater()
-    {
-          if (atWater())
-           {
-              turn(180);
-              move();
-               
-            }
+
+    public void checkWater() {
+        if (atWater()) {
+            turn(180);
+            move();
+
         }
-public void checkEdge()
-    {
-          if (atWorldEdge())
-           {
-              turn(180);
-              move();
-               
-            }
+    }
+
+    public void checkEdge() {
+        if (atWorldEdge()) {
+            turn(180);
+            move();
+
         }
+    }
+
     /**
      * Is there any food here where we are? If so, try to load some!
      */
-    public void checkFood()
-    {
+    public void checkFood() {
         setFlag(1, false);
         // check whether there's a tomato pile here
-        TomatoPile tomatoes = (TomatoPile) getOneIntersectingObject
-(TomatoPile.class);
-        if(tomatoes != null)
-        {
+        TomatoPile tomatoes = (TomatoPile) getOneIntersectingObject(TomatoPile.class);
+        if (tomatoes != null) {
             setFlag(1, true);
             loadTomato();
         }
@@ -103,40 +87,29 @@ public void checkEdge()
      * Return true if the greeps see a tomato pile.
      */
 
-    public boolean seeFood()
-    {
-        if (getOneIntersectingObject(TomatoPile.class) == null)
-        {
+    public boolean seeFood() {
+        if (getOneIntersectingObject(TomatoPile.class) == null) {
             return false;
-        }
-        else
-        {
+        } else {
             return true;
         }
     }
 
     /**
      * Set the rotation in the direction  of the last tomato pile
-sean.
+     * sean.
      */
 
-    public void turnToTomatoes()
-    {
-        if (seeFood())
-        {
-        int deltaX = getOneIntersectingObject(TomatoPile.class).getX()
-- getX();
-        int deltaY = getOneIntersectingObject(TomatoPile.class).getY()
-- getY();
-        setRotation((int) (180 * Math.atan2(deltaY, deltaX) /
-Math.PI));
+    public void turnToTomatoes() {
+        if (seeFood()) {
+            int deltaX = getOneIntersectingObject(TomatoPile.class).getX() - getX();
+            int deltaY = getOneIntersectingObject(TomatoPile.class).getY() - getY();
+            setRotation((int) (180 * Math.atan2(deltaY, deltaX) / Math.PI));
         }
     }
 
-    public void worldEdge()
-    {
-        if (atWorldEdge())
-        {
+    public void worldEdge() {
+        if (atWorldEdge()) {
             turn(180);
             move();
             turn(90);
@@ -144,8 +117,7 @@ Math.PI));
 
         }
 
-        if (atWater())
-        {
+        if (atWater()) {
             turn(70);
         }
 
@@ -154,10 +126,8 @@ Math.PI));
     /**
      * Act the proper way to fallow the paint.
      */
-    public boolean seePaint()
-    {
-     if (seePaint("orange"))
-        {
+    public boolean seePaint() {
+        if (seePaint("orange")) {
 
         }
         return true;
@@ -166,39 +136,32 @@ Math.PI));
     /**
      * Start a spit line.
      */
-    public void startSpit()
-    {
-        if (getFlag(2))
-        {
-        spit("orange");
+    public void startSpit() {
+        if (getFlag(2)) {
+            spit("orange");
         }
     }
 
-    public void fallowPaint()
-    {
+    public void fallowPaint() {
         turnHome();
         turn(180);
     }
 
     /**
      * This method specifies the name of the author (for display on
-the result board).
+     * the result board).
      */
-    public static String getAuthorName()
-    {
+    public static String getAuthorName() {
         return "Alay Deliwala";  // write your name here!
     }
 
     /**
      * This method specifies the image we want displayed at any time.
-(No need
+     * (No need
      * to change this for the competition.)
      */
-    public String getCurrentImage()
-    {
-        if(carryingTomato())
-            return "greep-with-food.png";
-        else
-            return "greep.png";
+    public String getCurrentImage() {
+        if (carryingTomato()) return "greep-with-food.png";
+        else return "greep.png";
     }
 }
