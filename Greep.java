@@ -19,14 +19,13 @@ public class Greep extends Creature {
     /**
      * Do what a greep's gotta do.
      */
-
     public void act() {
         super.act();
 
         if (carryingTomato()) {
             if (atShip()) {
                 dropTomato();
-                turn(180);
+                turnToTomatoes();
                 setMemory(getRotation() / 20);
             } else {
                 turnHome();
@@ -34,8 +33,7 @@ public class Greep extends Creature {
                 checkWater();
                 checkEdge();
             }
-        } else // if not carrying tomato
-        {
+        } else { //if not carrying tomato
             if (getFlag(1)) // flag is used denote whether we are on tomatoes
             {
                 turnToTomatoes();
@@ -57,7 +55,11 @@ public class Greep extends Creature {
         if (atWater()) {
             turn(180);
             move();
-
+            spit("red");
+        } else if(seePaint()) {
+            turn(90);
+            move();
+            spit("red");
         }
     }
 
@@ -97,7 +99,7 @@ public class Greep extends Creature {
 
     /**
      * Set the rotation in the direction  of the last tomato pile
-     * sean.
+     * seen.
      */
 
     public void turnToTomatoes() {
@@ -124,7 +126,7 @@ public class Greep extends Creature {
     }
 
     /**
-     * Act the proper way to fallow the paint.
+     * Act the proper way to follow the paint.
      */
     public boolean seePaint() {
         if (seePaint("orange")) {
@@ -142,7 +144,7 @@ public class Greep extends Creature {
         }
     }
 
-    public void fallowPaint() {
+    public void followPaint() {
         turnHome();
         turn(180);
     }
@@ -152,7 +154,7 @@ public class Greep extends Creature {
      * the result board).
      */
     public static String getAuthorName() {
-        return "Alay Deliwala";  // write your name here!
+        return "Alay Deliwala + ADA";  // write your name here!
     }
 
     /**
