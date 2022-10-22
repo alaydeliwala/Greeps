@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
-import java.awt.Color;
-import java.awt.Font;
+
+
 import java.util.Calendar;
 
 /**

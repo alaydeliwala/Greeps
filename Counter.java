@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 
-import java.awt.Color;
-import java.awt.Font;
+
+
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 

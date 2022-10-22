@@ -1,6 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 
-import java.awt.Color;
+
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
